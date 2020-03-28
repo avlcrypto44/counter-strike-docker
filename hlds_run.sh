@@ -16,12 +16,12 @@ EXTRA_OPTIONS=( "$@" )
 
 EXECUTABLE="/opt/hlds/hlds_run"
 GAME="${GAME:-cstrike}"
-MAXPLAYERS="${MAXPLAYERS:-32}"
+MAXPLAYERS="${MAXPLAYERS:-16}"
 START_MAP="${START_MAP:-de_dust2}"
 SERVER_NAME="${SERVER_NAME:-Counter-Strike 1.6 Server}"
-START_MONEY="${START_MONEY:-800}"
+START_MONEY="${START_MONEY:-16000}"
 BUY_TIME="${BUY_TIME:-0.25}"
-FRIENDLY_FIRE="${FRIENDLY_FIRE:-1}"
+FRIENDLY_FIRE="${FRIENDLY_FIRE:-0}"
 
 OPTIONS=( "-game" "${GAME}" "+maxplayers" "${MAXPLAYERS}" "+map" "${START_MAP}" "+hostname" "\"${SERVER_NAME}\"" "+mp_startmoney" "${START_MONEY}" "+mp_friendlyfire" "${FRIENDLY_FIRE}" "+mp_buytime" "${BUY_TIME}")
 

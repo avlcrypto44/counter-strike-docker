@@ -48,6 +48,10 @@ RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-base-linux
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
 ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
 
+# Install GunGame
+COPY files/gg/ /opt/hlds/cstrike/
+RUN echo "gungame.amxx" >> /opt/hlds/cstrike/addons/amxmodx/configs/plugins.ini
+
 # Cleanup
 RUN apt remove -y curl
 
