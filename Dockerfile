@@ -44,13 +44,12 @@ ADD files/dproto_i386.so /opt/hlds/cstrike/addons/dproto/dproto_i386.so
 ADD files/dproto.cfg /opt/hlds/cstrike/dproto.cfg
 
 # Install AMX mod X
-RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-base-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
-RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
-ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
+#RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-base-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
+#RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
+#ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
 
-# Install GunGame
-COPY files/gg/ /opt/hlds/cstrike/
-RUN echo "gungame.amxx" >> /opt/hlds/cstrike/addons/amxmodx/configs/plugins.ini
+# Copy installed AMX mod X + GG
+COPY files/cstrike/ /opt/hlds/cstrike/
 
 # Cleanup
 RUN apt remove -y curl
